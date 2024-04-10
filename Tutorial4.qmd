@@ -1,0 +1,27 @@
+---
+title: "Learning to reference figures, tables and sections"
+author: "Akshata Mhaski"
+date: 10/04/2024
+format: html
+editor: visual
+---
+
+The `echo: false` option disables the printing of code (only output is displayed).
+
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+
+data(package = "palmerpenguins")
+
+ggplot(penguins, aes(x = bill_depth_mm, y = flipper_length_mm, color = species)) +
+    geom_point()
+```
+
+```{r}
+ggplot(penguins, aes(x = species, y = bill_length_mm, fill=species)) +
+geom_boxplot(outlier.colour = "blue", outlier.size = 2) +
+geom_jitter(width=0.2, alpha = 0.5) +
+labs(title="Penguin Bill Length") +
+theme_light()
+```
